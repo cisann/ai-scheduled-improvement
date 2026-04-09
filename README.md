@@ -4,6 +4,14 @@
 
 It is designed to be simple to fork, simple to understand, and inexpensive to run. The current setup uses **Kilo Code** and **OpenCode** because both support **non-interactive autonomous CLI usage** and currently offer **free model options** that make it easy to get started, including lightweight setups that can work even without adding API keys.
 
+## Getting started
+
+1. Fork or clone this repository.
+2. Copy or adapt the workflow files in `.github/workflows/`.
+3. Optionally add `KILO_API_KEY` and/or `OPENCODE_API_KEY` as repository secrets.
+4. Enable GitHub Actions in your repository.
+5. Run one of the workflows manually with `workflow_dispatch` to verify it behaves the way you want before relying on the schedule.
+
 ## What this repository does
 
 This repository contains two scheduled GitHub Actions workflows that:
@@ -34,7 +42,7 @@ The current implementation is optimized for **free-model usage** and for running
 
 ### Kilo Code workflow
 
-File: `/home/runner/work/ai-scheduled-improvement/ai-scheduled-improvement/.github/workflows/kilo.yml`
+File: `.github/workflows/kilo.yml`
 
 Current behavior:
 
@@ -47,7 +55,7 @@ Current behavior:
 
 ### OpenCode workflow
 
-File: `/home/runner/work/ai-scheduled-improvement/ai-scheduled-improvement/.github/workflows/opencode.yml`
+File: `.github/workflows/opencode.yml`
 
 Current behavior:
 
@@ -57,6 +65,8 @@ Current behavior:
 - configures OpenCode with the `opencode/big-pickle` model
 - writes `OPENCODE_API_KEY` auth data only if you provide the secret
 - asks OpenCode to perform a minimal autonomous improvement and push the result
+
+Together, the default configuration gives you two staggered scheduled opportunities per day: one from Kilo Code and one from OpenCode. If you want only one daily run overall, remove one workflow or change the schedules.
 
 ## Supported agents right now
 
