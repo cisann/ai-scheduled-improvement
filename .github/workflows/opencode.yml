@@ -51,4 +51,4 @@ jobs:
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         run: |
-          opencode run "Perform a daily minimalist improvement (it is a must, whatever it is). Add minimalist code or fix one specific bug, typo, or small logic flaw in a single file. Avoid large refactors or full-file rewrites. Keep changes minimal to save tokens. After the edit, execute git add, git commit with relevant commit name, and git push"
+          opencode run "Perform a daily minimalist improvement (it is a must, whatever it is). Add minimalist code or fix one specific bug, typo, or small logic flaw in a single file. Avoid large refactors or full-file rewrites. Keep changes minimal to save tokens. Don't change github workflow files. After the edit, execute git add, git commit with relevant commit name, and git push"
